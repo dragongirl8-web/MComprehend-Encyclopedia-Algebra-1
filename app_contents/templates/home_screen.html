@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <meta charset="UTF-8">
+  <title>MComprehend</title>
+    <style>
+    @font-face {
+    font-family: 'HomeVideo';
+    src: url('{{ url_for("static", filename="fonts/HomeVideo.ttf") }}')
+       format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+        body {
+            font-family: 'HomeVideo', sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #507bc0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="background-img" src="{{ url_for('static', filename='images/titlecard.png') }}" alt="Background Image">
+
+        <div class="text-overlay">
+            <h1>Welcome to MComprehend</h1>
+            <p>Explore the world of Algebra 1 with our interactive encyclopedia.</p>
+            <a href="{{ url_for('home') }}" class="button">Get Started</a>
+        </div>
+    </div>
+</body>
+</html>
