@@ -29,8 +29,27 @@
         <div class="text-overlay">
             <h1>Welcome to MComprehend</h1>
             <p>Explore the world of Algebra 1 with our interactive encyclopedia.</p>
-            <a href="{{ url_for('home') }}" class="button">Get Started</a>
+            <form method="post" action="{{ url_for('get_started') }}">
+                <button type="submit" class="button">Get Started</button>
+            </form>
         </div>
     </div>
+    <style>
+        body {
+            button {
+                background-color: #507bc0;
+                font-family: 'HomeVideo', sans-serif;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        }
+    </style>
 </body>
 </html>
