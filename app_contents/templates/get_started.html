@@ -7,6 +7,10 @@
 <body>
     <h1>Welcome to MComprehend, an interactive Algebra 1 encyclopedia!</h1>
     <a href="{{ url_for('home') }}">Home</a>
+    <h2>Linear Equations<h2>
+    <a href="{{ url_for('linear_equations') }}">Linear Systems and Equations: Section 1</a>
+    <a href="{{ url_for('linear_quiz') }}">Section 1 Quiz</a>
+    
    <style>
         @font-face {
             font-family: 'HomeVideo';
@@ -41,6 +45,13 @@
             color: #ffffff;
             margin-bottom: 30px;
             font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 2rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
