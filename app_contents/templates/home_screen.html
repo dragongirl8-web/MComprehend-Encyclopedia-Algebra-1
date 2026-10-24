@@ -1,55 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-  <meta charset="UTF-8">
-  <title>MComprehend</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MComprehend</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/styles.css') }}">
+
     <style>
-    @font-face {
-    font-family: 'HomeVideo';
-    src: url('{{ url_for("static", filename="fonts/HomeVideo.ttf") }}')
-       format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+        @font-face {
+            font-family: 'HomeVideo';
+            src: url("{{ url_for('static', filename='fonts/HomeVideo.ttf') }}")
+                 format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'HomeVideo', sans-serif;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.35)
+                ),
+                url("{{ url_for('static', filename='images/homebackground.jpg') }}");
+
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-repeat: no-repeat;
-            color: #507bc0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img class="background-img" src="{{ url_for('static', filename='images/titlecard.png') }}" alt="Background Image">
 
-        <div class="text-overlay">
-            <h1>Welcome to MComprehend</h1>
-            <p>Explore the world of Algebra 1 with our interactive encyclopedia.</p>
-            <form method="post" action="{{ url_for('get_started') }}">
-                <button type="submit" class="button">Get Started</button>
-            </form>
-        </div>
-    </div>
-    <style>
-        body {
-            button {
-                background-color: #507bc0;
-                font-family: 'HomeVideo', sans-serif;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                margin: 4px 2px;
-                cursor: pointer;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+
+            background: rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 32px rgba(0,0,0,0.35);
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .text-overlay {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+
+            text-shadow:
+                2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #dce8ff;
+        }
+
+        .button {
+            background: linear-gradient(
+                135deg,
+                #507bc0,
+                #6b9fff
+            );
+
+            color: white;
+
+            border: none;
+            border-radius: 12px;
+
+            padding: 15px 35px;
+
+            font-family: 'HomeVideo', sans-serif;
+            font-size: 1.1rem;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            box-shadow:
+                0 4px 20px rgba(80,123,192,0.5);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 25px rgba(80,123,192,0.8);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .text-overlay {
+                padding: 25px;
+            }
+
+            .button {
+                width: 100%;
             }
         }
+
     </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img
+            class="hero-image"
+            src="{{ url_for('static', filename='images/titlecard.png') }}"
+            alt="MComprehend Title Card"
+        >
+
+        <div class="text-overlay">
+
+            <h1>Welcome to MComprehend</h1>
+
+            <p>
+                Explore Algebra I through interactive lessons,
+                quizzes, graphs, and visual explanations.
+                Learn math in a way that's actually fun.
+            </p>
+
+            <form method="post"
+                  action="{{ url_for('get_started') }}">
+
+                <button type="submit" class="button">
+                    Get Started
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
 </body>
 </html>

@@ -23,5 +23,9 @@ def linear_quiz():
 def incorrect():
     return render_template('incorrect.html') #routes to html file
 
+@app.route('/correct', methods=['GET','POST'])
+def correct():
+    return render_template('correct.html') #routes to html file
+
 if __name__ == '__main__':
     app.run(debug=True)
